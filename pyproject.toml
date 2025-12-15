@@ -1,0 +1,27 @@
+[project]
+name = "qrcode-com"
+version = "0.1.0"
+description = "One-way data transfer over QR code sequences (send/receive, multi-grid, with FEC and integrity checks)."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Your Name" }]
+dependencies = [
+    "opencv-python>=4.8.0",
+    "numpy>=1.24.0",
+    "segno>=1.6.0",
+]
+
+[project.optional-dependencies]
+fec = ["reedsolo>=1.7.0"]
+cli = []
+
+[project.scripts]
+qrc = "qrcode_com.cli:main"
+
+[build-system]
+requires = ["setuptools>=65.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]

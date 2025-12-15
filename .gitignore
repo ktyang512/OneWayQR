@@ -1,0 +1,28 @@
+# Python artifacts
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.cache/
+.coverage
+
+# Build / dist
+build/
+dist/
+
+# Environments / tools
+.venv/
+venv/
+.env
+.idea/
+.vscode/
+.python-version
+
+# Generated media / temp payloads
+*.mp4
+*.tmp
+payload.tmp
+
+# OS
+.DS_Store
