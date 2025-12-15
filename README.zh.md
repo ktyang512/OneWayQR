@@ -1,13 +1,13 @@
-# 使用 QR 码单向传输（Python）
+# OneWayQR（Python）
 
 用于通过 QR 码序列进行单向数据传输的 MVP，支持多 QR 网格、基础 XOR 冗余和完整性校验。
 
 ## 快速开始
-- 安装依赖：`pip install -e .`（若后续需要更强 FEC，可额外安装 `pip install reedsolo`）。
-- 发送（窗口显示）：`qrc send /path/to/file --grid-rows 2 --grid-cols 2 --fps 10`
-- 发送到 MP4（无窗口）：`qrc send /path/to/dir --compress --no-display --video-output out.mp4`
-- 摄像头接收：`qrc receive --extract --output out_dir`
-- 从视频接收：`qrc receive --input out.mp4 --extract --output out_dir`
+- 安装依赖：`pip install -e .`（若后续需要更强 FEC，可额外安装 `pip install reedsolo`）。CLI 入口命令：`onewayqr`（别名 `qrc`）。
+- 发送（窗口显示）：`onewayqr send /path/to/file --grid-rows 2 --grid-cols 2 --fps 10`
+- 发送到 MP4（无窗口）：`onewayqr send /path/to/dir --compress --no-display --video-output out.mp4`
+- 摄像头接收：`onewayqr receive --extract --output out_dir`
+- 从视频接收：`onewayqr receive --input out.mp4 --extract --output out_dir`
 
 ## 说明
 - 负载：文件原样发送；目录会打包为 tar（可选 gzip 压缩）。`--compress` 对整体负载做 gzip（QR 内已含 ECC，仍建议按场景决定）。
@@ -27,6 +27,3 @@
 - 暂无自适应曝光/布局检测，依赖稳定光照与对焦。
 - 尚未支持可恢复/断点续播；一次播发需完整录制。
 - base64 增加约 33% 体积；需根据显示/摄像头条件调节分片大小。
-
-## 同步维护
-本中文版内容与英文版 `README.md` 需保持同步更新。*** End Patch ***!

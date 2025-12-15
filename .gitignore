@@ -26,3 +26,7 @@ payload.tmp
 
 # OS
 .DS_Store
+
+# AI
+AGENTS.md
+AGENTS.zh.md

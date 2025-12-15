@@ -1,13 +1,13 @@
-# QR Code One-Way Transfer (Python)
+# OneWayQR (Python)
 
 Simple MVP for sending files/logs/binary data over QR code sequences with optional multi-QR grid, XOR parity, and integrity checks.
 
 ## Quick Start
-- Install deps: `pip install -e .` (and `pip install reedsolo` if you later add stronger FEC).
-- Send (window display): `qrc send /path/to/file --grid-rows 2 --grid-cols 2 --fps 10`
-- Send to MP4 (no window): `qrc send /path/to/dir --compress --no-display --video-output out.mp4`
-- Receive from camera: `qrc receive --extract --output out_dir`
-- Receive from video: `qrc receive --input out.mp4 --extract --output out_dir`
+- Install deps: `pip install -e .` (and `pip install reedsolo` if you later add stronger FEC). CLI entrypoint: `onewayqr` (alias `qrc`).
+- Send (window display): `onewayqr send /path/to/file --grid-rows 2 --grid-cols 2 --fps 10`
+- Send to MP4 (no window): `onewayqr send /path/to/dir --compress --no-display --video-output out.mp4`
+- Receive from camera: `onewayqr receive --extract --output out_dir`
+- Receive from video: `onewayqr receive --input out.mp4 --extract --output out_dir`
 
 ## Notes
 - Payloads: files are sent raw; directories are packed as tar (optionally gz). `--compress` gzips payloads (base64 + QR ECC already applied).

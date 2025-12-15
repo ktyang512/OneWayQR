@@ -8,7 +8,7 @@ from . import receiver, sender
 def main(argv: list[str] | None = None) -> None:
     args = argv if argv is not None else sys.argv[1:]
     if not args:
-        print("Usage: qrc [send|receive] ...")
+        print("Usage: onewayqr [send|receive] ... (alias: qrc)")
         sys.exit(1)
     cmd, *rest = args
     if cmd == "send":

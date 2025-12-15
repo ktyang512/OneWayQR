@@ -1,10 +1,10 @@
 [project]
-name = "qrcode-com"
+name = "onewayqr"
 version = "0.1.0"
-description = "One-way data transfer over QR code sequences (send/receive, multi-grid, with FEC and integrity checks)."
+description = "OneWayQR: one-way data transfer over QR code sequences (send/receive, multi-grid, with FEC and integrity checks)."
 readme = "README.md"
 requires-python = ">=3.10"
-license = { text = "MIT" }
+license = { text = "Apache-2.0" }
 authors = [{ name = "Your Name" }]
 dependencies = [
     "opencv-python>=4.8.0",
@@ -17,7 +17,8 @@ fec = ["reedsolo>=1.7.0"]
 cli = []
 
 [project.scripts]
-qrc = "qrcode_com.cli:main"
+onewayqr = "onewayqr.cli:main"
+qrc = "onewayqr.cli:main"
 
 [build-system]
 requires = ["setuptools>=65.0"]
